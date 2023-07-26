@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="icon" type="x-icon" href="cspit.png">
+<link rel="stylesheet" href="new.css">
+	<title>Predictor</title>
+	<style>
+		
+label{
+    margin-top: 10px;
+}
+input{
+    padding: 5px;
+    margin:5px;
+}
+button{
+    padding:10px;
+    margin-top: 20px;
+    font-size:1.2em;
+}
+h4{
+    margin-top:30px;
+    
+    font-size: 1.5em;
+}
+button {
+    width: 100px;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0062cc;
+  }
+	</style>
+</head>
+<body>
+	<header>
+		<h1>Calculate your Rank</h1>
+		<nav>
+			<ul>
+				<li><a href="home.php">Home</a></li>
+				<li><a href="calculate.html">Calculate your Rank</a></li>
+				<li><a href="about.html">About Us</a></li>
+				<li><a href="feedback.php">Feedback</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+        <form>
+			<label for="Boards"><h4>Enter your Board's Percentage</h4></label>
+        <input type="number" name="Boards" id="Boards" min="0" max="100" step="0.01" required>
+        <label for="jee"> <h4>Enter your JEE's Percentage</h4></label>
+        <input type="number" name="jee" id="jee" min="0" max="100" step="0.01" required><br><br>
+		<button type="button" onclick="calculateRank()">Calculate</button>
+</form>
+        
+        <h2 id="rank"><h2>
+		
+	</main>
+    <script>
+        function calculateRank(){
+            var board = parseFloat(document.getElementById("Boards").value);
+            var jee = parseFloat(document.getElementById("jee").value);
+            var rank=Math.round((50*board +50*jee)/100);
+			console.log(rank);
+            document.getElementById("rank").innerHTML="Your ACPC rank is "+ rank;
+        }
+        </script>
+            <footer>
+                <br><br> <br><br> <br> 
+                <p>&copy;2023 College admission predictor by Riya Thakker, Riya Bhimani</p>
+            </footer>
+</body>
+</html>
